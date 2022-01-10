@@ -1,29 +1,544 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
+
+  @font-face {
+    font-family: 'Merriweather';
+    src: url("assets/fonts/Merriweather-Bold.ttf");
+    font-weight: 700;
+  }
+
+  @font-face {
+    font-family: 'Inter';
+    src: url("assets/fonts/Inter-Regular.ttf");
+    font-weight: 400;
+  }
+
+  @font-face {
+    font-family: 'Inter';
+    src: url("assets/fonts/Inter-Bold.ttf");
+    font-weight: 700;
+  }
+
+
+  :root{
+    --colorGold: #bdae82;
+    --colorBlack: #000;
+    --colorWhite: #fff;
+    --fontSize60: 60px;
+    --fontSize40: 40px;
+    --fontInter: 'Inter';
+    --fontMerriweather: 'Merriweather';
+  }
+
+html{
+  scroll-behavior: smooth;
+}
 
 body{
     background-color: black;
-    padding: 0;
-    margin: 0;
+    font-family: var(--fontInter);
+    color: var(--colorWhite);
 }
 
 .container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 20px 20px;
 }
 
-.logo {
-    width: 50px;
-    height: 50px;
-    background-image: url('./assets/svg/logo.svg');
-    background-size: contain;
-    background-repeat: no-repeat;  
-    transition: 0.3s;
-    margin-top: 20px;
+
+/* HEADER */
+
+.containerHeader{
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  line-height: 50px;
+  background: url('assets/img/headerBg.jpg');
+  background-repeat: no-repeat;
+  background-position: center 0;
+  padding: 20px 20px;
+}
+
+.logo{
+  width: 50px;
+  height: 50px;
+}
+
+.logoIcon {
+  width: 100%;
+  height: 100%;
+  box-sizing: content-box;
+  fill: var(--colorWhite);
+  transition: 0.3s;
   }
-  .logo:hover {
-    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
-      contrast(87%);
+
+.logoIcon:hover {
+  fill: var(--colorGold);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav{
+  margin-left: auto;
+  font-family: 'Inter';
+  font-weight: 400;
+}
+
+.navList{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  list-style: none;
+  margin-right: 15px;
+}
+
+.navLink{
+  color: var(--colorWhite);
+  padding: 0 15px;
+  text-decoration: none;
+  transition: color .3s;
+}
+
+
+.navLink:hover{
+  color: var(--colorGold);
+  transition: .3s;
+}
+
+.langSwitch{
+  color: white;
+  font-family: var(--fontInter);
+  font-weight: 700;
+  word-spacing: 4px;
+}
+
+.langSwitchLink{
+  color: var(--colorWhite);
+  text-decoration: none;
+  transition: color .3s;
+}
+
+.langSwitchLink:hover{
+  color: var(--colorGold);
+  cursor: pointer;
+  transition: color .3s;
+}
+
+.langSwitch .active{
+  color: var(--colorGold);
+}
+
+
+
+
+
+
+/* HERO SECTION */
+
+
+.containerHero{
+  background-image: url(assets/img/headerBg.jpg);
+  background-position: center -90px;
+  background-repeat: no-repeat;
+  min-height: 820px;
+}
+
+
+.contentHero{
+  margin-top: 140px;
+  margin-left: 60px;
+  width: 470px;
+}
+
+.titleHero{
+  font-size: 60px;
+  line-height: 120px;
+  color: var(--colorWhite);
+  font-family: 'Merriweather';
+  font-weight: 700;
+}
+
+.hero .about{
+  color: var(--colorWhite);
+  font-family: var(--fontInter);
+  font-size: 20px;
+  line-height: 40px;
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+.button{
+  border: 0;
+  background-color: var(--colorGold);
+  cursor: pointer;
+  font-family: inherit;
+  width: 220px;
+  height: 55px;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+.button:hover{
+  color: var(--colorWhite);
+  transition: color 0.3s;
+}
+
+
+.buttonSwitch{
+  border: 2px solid var(--colorGold);
+  background-color: var(--colorBlack);
+  color: var(--colorGold);
+  cursor: pointer;
+  font-family: inherit;
+  width: 220px;
+  height: 55px;
+  font-size: 20px;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.buttonSwitch:hover{
+  color: var(--colorWhite);
+  transition: color 0.3s;
+}
+
+.portfolio .active{
+  color: var(--colorBlack);
+  background-color: var(--colorGold);
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.portfolio .active:hover{
+  color: var(--colorWhite);
+  transition: color 0.3s;
+}
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+.titleСontainer{
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 80px;
+
+}
+
+ .title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--colorGold);
+    font-family: 'Merriweather';
+    font-weight: bold;
+    font-size: var(--fontSize40);
+    line-height: 80px;
   }
+
+  h2 span {
+    background: var(--colorBlack);
+    margin: 0 20px;
+  }
+  h2:before,
+  h2:after {
+    background: var(--colorGold);
+    height: 2px;
+    flex: 1;
+    content: '';
+  }
+
+
+.skillContainer{
+  padding: 20px 20px 0;
+}
+
+.skillsItems{
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.skillItem{
+  background-position: center top;
+  background-repeat: no-repeat;
+  width: 320px;
+  height: 240px;
+}
+
+.skillItem:nth-child(1){
+  background-image: url("./assets/svg/camera.svg");
+  background-size: 62px 50px;
+  top: 20px;
+}
+
+.skillItem:nth-child(2){
+  background-image: url("assets/svg/video.svg");
+  background-size: 62px 50px;
+  top: 20px;
+}
+
+.skillItem:nth-child(3){
+  background-image: url("assets/svg/image.svg");
+  background-size: 66px 50px;
+  top: 20px;
+}
+
+.skillItem:nth-child(4){
+  background-image: url("assets/svg/mic.svg");
+  background-size: 62px 50px;
+  top: 20px;
+}
+
+.skillTitle{
+  margin-top: 100px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 40px;
+}
+
+.skillDescription{
+  font-size: 18px;
+  line-height: 36px;
+  text-align: center;
+  padding: 21px 20px 0;
+}
+
+
+
+/* PROTFOLIO */
+.portfolio .container{
+  margin-top: 2px;
+  padding-bottom: 0;
+}
+
+.portfolio .buttonWrapper{
+  margin-top: 60px;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+
+
+.portfolioItems{
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+
+
+/* VIDEO */
+.video .container{
+  padding-bottom: 0;
+}
+
+.videoPlayer{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.playButton{
+  position: absolute;
+  border: none;
+  outline: none; 
+  background-color: transparent;
+}
+
+.playIcon{
+  width: 130px;
+  height: 130px;
+  fill: var(--colorWhite);
+  transition: 0.3s;
+}
+
+
+.playIcon:hover{
+  fill: var(--colorGold);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+
+/*PRICE*/
+
+.priceItems{
+  margin-top: 60px;
+  display: flex;
+  gap: 25px;
+}
+
+.priceItem{
+  width: 450px;
+  height: 505px;
+  border: 3px solid var(--colorGold);
+  text-align: center;
+}
+
+.price .priceTitle{
+  font-family: var(--fontMerriweather);
+  font-size: 28px;
+  line-height: 56px;
+  margin-top: 40px;
+  font-weight: bold;
+}
+
+.priceCost{
+  font-family: var(--fontMerriweather);
+  font-size: 24px;
+  line-height: 48px;
+  color: var(--colorGold);
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.preciDescription{
+  display: block;
+  font-size: 18px;
+  line-height: 36px;
+}
+
+.priceItem .button{
+  margin-top: 40px;
+}
+
+
+/*CONTACTS*/
+.contact .container{
+  margin-top: 80px;
+  background-image: url('./assets/img/contactsBg.jpg');
+  background-size: auto 700px;
+  background-position: center center;
+  min-height: 700px;
+}
+.contactWrapper{
+  padding-left: 950px;
+  padding-top: 40px;
+}
+
+.contactTitle{
+  font-family: var(--fontMerriweather);
+  font-size: var(--fontSize40);
+  font-weight: bold;
+  line-height: 80px;
+  color: var(--colorGold);
+}
+
+
+.contactForm{
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+.contact .input{
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 2px solid var(--colorGold);
+  font-family: var(--fontInter);
+  font-size: 20px;
+  line-height: 40px;
+  color: var(--colorGold);
+  margin-bottom: 20px;
+  padding: 3px 19px;
+}
+
+.contact .input:focus{
+  border: 2px solid var(--colorWhite);
+  border-radius: 0;
+  outline: none;
+}
+
+.contact .input::placeholder{
+  font-family: var(--fontInter);
+  font-size: 20px;
+  line-height: 40px;
+  color: var(--colorGold);
+}
+
+.contact .textarea{
+  resize: none;
+  width: 450px;
+  height: 100px;
+  margin-bottom: 30px;
+}
+
+
+/*FOOTER*/
+
+.footer .container{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 35px;
+}
+
+.footer .footerLink{
+  color: var(--colorWhite);
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 40px;
+  transition: color 0.3s;
+}
+
+.rss{
+  margin-left: 19px;
+}
+
+.footer .footerLink:hover{
+  color: var(--colorGold);
+  
+}
+.footer .footerItem:first-child{
+  word-spacing: 15px;
+}
+
+.footer .socialLink{
+  padding: 0 10px;
+}
+
+.footer .socialLink:first-child{
+  padding-left: 0;
+}
+
+.footer .socialLink:last-child{
+  padding-right: 0;
+}
+
+.footer .socialLinkList{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  list-style: none;
+  padding-top: 4px;
+}
+
+.socialIcon{
+  fill: var(--colorWhite);
+  width: 32px;
+  height: 32px;
+  transition: 0.3s;
+}
+
+.socialIcon:hover{
+  fill: var(--colorGold);
+  transition: 0.3s;
+}
