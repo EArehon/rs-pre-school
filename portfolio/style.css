@@ -1,46 +1,45 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  @font-face {
-    font-family: 'Merriweather';
-    src: url("assets/fonts/Merriweather-Bold.ttf");
-    font-weight: 700;
-  }
+@font-face {
+  font-family: 'Merriweather';
+  src: url("assets/fonts/Merriweather-Bold.ttf");
+  font-weight: 700;
+}
 
-  @font-face {
-    font-family: 'Inter';
-    src: url("assets/fonts/Inter-Regular.ttf");
-    font-weight: 400;
-  }
+@font-face {
+  font-family: 'Inter';
+  src: url("assets/fonts/Inter-Regular.ttf");
+  font-weight: 400;
+}
 
-  @font-face {
-    font-family: 'Inter';
-    src: url("assets/fonts/Inter-Bold.ttf");
-    font-weight: 700;
-  }
+@font-face {
+  font-family: 'Inter';
+  src: url("assets/fonts/Inter-Bold.ttf");
+  font-weight: 700;
+}
 
-
-  :root{
-    --colorGold: #bdae82;
-    --colorBlack: #000;
-    --colorWhite: #fff;
-    --fontSize60: 60px;
-    --fontSize40: 40px;
-    --fontInter: 'Inter';
-    --fontMerriweather: 'Merriweather';
-  }
+:root{
+  --colorGold: #bdae82;
+  --colorBlack: #000;
+  --colorWhite: #fff;
+  --fontSize60: 60px;
+  --fontSize40: 40px;
+  --fontInter: 'Inter';
+  --fontMerriweather: 'Merriweather';
+}
 
 html{
   scroll-behavior: smooth;
 }
 
 body{
-    background-color: black;
-    font-family: var(--fontInter);
-    color: var(--colorWhite);
+  background-color: black;
+  font-family: var(--fontInter);
+  color: var(--colorWhite);
 }
 
 .container {
@@ -48,7 +47,6 @@ body{
   margin: 0 auto;
   padding: 20px 20px;
 }
-
 
 /* HEADER */
 
@@ -103,7 +101,6 @@ body{
   transition: color .3s;
 }
 
-
 .navLink:hover{
   color: var(--colorGold);
   transition: .3s;
@@ -132,13 +129,7 @@ body{
   color: var(--colorGold);
 }
 
-
-
-
-
-
 /* HERO SECTION */
-
 
 .containerHero{
   background-image: url(assets/img/headerBg.jpg);
@@ -146,7 +137,6 @@ body{
   background-repeat: no-repeat;
   min-height: 820px;
 }
-
 
 .contentHero{
   margin-top: 140px;
@@ -187,7 +177,6 @@ body{
   transition: color 0.3s;
 }
 
-
 .buttonSwitch{
   border: 2px solid var(--colorGold);
   background-color: var(--colorBlack);
@@ -216,21 +205,6 @@ body{
   transition: color 0.3s;
 }
 
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
 .titleСontainer{
   width: 50%;
   margin: 0 auto;
@@ -238,29 +212,29 @@ body{
 
 }
 
- .title{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--colorGold);
-    font-family: 'Merriweather';
-    font-weight: bold;
-    font-size: var(--fontSize40);
-    line-height: 80px;
-  }
+.title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--colorGold);
+  font-family: 'Merriweather';
+  font-weight: bold;
+  font-size: var(--fontSize40);
+  line-height: 80px;
+}
 
-  h2 span {
-    background: var(--colorBlack);
-    margin: 0 20px;
-  }
-  h2:before,
-  h2:after {
-    background: var(--colorGold);
-    height: 2px;
-    flex: 1;
-    content: '';
-  }
+h2 span {
+  background: var(--colorBlack);
+  margin: 0 20px;
+}
 
+h2:before,
+h2:after {
+  background: var(--colorGold);
+  height: 2px;
+  flex: 1;
+  content: '';
+}
 
 .skillContainer{
   padding: 20px 20px 0;
@@ -319,9 +293,8 @@ body{
   padding: 21px 20px 0;
 }
 
-
-
 /* PROTFOLIO */
+
 .portfolio .container{
   margin-top: 2px;
   padding-bottom: 0;
@@ -334,7 +307,6 @@ body{
   justify-content: center;
 }
 
-
 .portfolioItems{
   margin-top: 60px;
   display: flex;
@@ -343,9 +315,8 @@ body{
   gap: 25px;
 }
 
-
-
 /* VIDEO */
+
 .video .container{
   padding-bottom: 0;
 }
@@ -372,13 +343,11 @@ body{
   transition: 0.3s;
 }
 
-
 .playIcon:hover{
   fill: var(--colorGold);
   transition: 0.3s;
   cursor: pointer;
 }
-
 
 /*PRICE*/
 
@@ -422,8 +391,8 @@ body{
   margin-top: 40px;
 }
 
-
 /*CONTACTS*/
+
 .contact .container{
   margin-top: 80px;
   background-image: url('./assets/img/contactsBg.jpg');
@@ -443,7 +412,6 @@ body{
   line-height: 80px;
   color: var(--colorGold);
 }
-
 
 .contactForm{
   display: flex;
@@ -482,13 +450,13 @@ body{
   margin-bottom: 30px;
 }
 
-
 /*FOOTER*/
 
 .footer .container{
   display: flex;
   justify-content: space-between;
   margin-top: 35px;
+  margin-bottom: 35px;
 }
 
 .footer .footerLink{
