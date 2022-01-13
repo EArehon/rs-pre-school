@@ -10,8 +10,8 @@
 </head>
 <body>
   
-    <header>
-      <div class="container containerHeader">
+    <header class="header">
+      <div class="container">
           
           <div class="logo">
             <svg class="logoIcon">
@@ -33,13 +33,19 @@
             <span class="langSwitchLink active">en</span> / <span class="langSwitchLink">ru</span>
           </div>
 
+          <div class="hamburgerMenu">
+            <svg class="logoHamburger">
+              <use xlink:href="assets/svg/sprite.svg#hamburger"></use>
+            </svg>
+          </div>
+
       </div>
     </header>
   
   <main>
     
     <section class="hero">
-      <div class="container containerHero">
+      <div class="container">
         <div class="contentHero">
           <h1 class="titleHero">Alexa Rise</h1>
           <p class="about">Save sincere emotions, romantic feelings and happy moments of life together with professional photographer Alexa Rise</p>
@@ -112,7 +118,7 @@
         </div>
         
         <div class="videoPlayer">
-          <img src="./assets/img/video-player.jpg" alt="Video" class="video">
+          <img src="./assets/img/video-player.jpg" alt="Video" class="videoImg">
           
             <button class="playButton" onclick="return false">
               <svg class="playIcon">
