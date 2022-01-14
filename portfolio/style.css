@@ -34,8 +34,18 @@
   --colorWhite: #fff;
   --fontSize60: 60px;
   --fontSize40: 40px;
+  --fontSize20: 20px;
+  --lineHeight80: 80px;
+  --lineHeight40: 40px;
   --fontInter: 'Inter';
   --fontMerriweather: 'Merriweather';
+}
+
+@media (max-width: 768px) {
+  :root{
+    --fontSize40: 32px;
+    --lineHeight80: auto;
+  }
 }
 
 html{
@@ -138,11 +148,18 @@ body{
   display: none;
   width: 50px;
   height: 50px;
+  background-color: var(--colorWhite);
+  -webkit-mask-image: url("./assets/svg/hamburger.svg");
+  -webkit-mask-size: cover;
+  transition: 0.3s;
 }
 
-.logoHamburger{
-  width: 100%;
-  height: 100%;
+.hamburgerMenu:hover{
+  background-color: var(--colorGold);
+}
+
+.hamburgerMenu.open{
+  -webkit-mask-image: url("./assets/svg/close.svg");
 }
 
 /* HERO SECTION */
@@ -165,6 +182,7 @@ body{
 }
 
 .titleHero{
+  font-size: var(--fontSize60);
   font-size: 60px;
   line-height: 120px;
   color: var(--colorWhite);
@@ -240,7 +258,7 @@ body{
   font-family: 'Merriweather';
   font-weight: bold;
   font-size: var(--fontSize40);
-  line-height: 80px;
+  line-height: var(--lineHeight80);
 }
 
 h2 span {
@@ -323,7 +341,9 @@ h2:after {
 
 .portfolio .buttonWrapper{
   margin-top: 60px;
+  padding: 0 30px;
   display: flex;
+  flex-wrap: wrap;
   gap: 5px;
   justify-content: center;
 }
@@ -353,6 +373,11 @@ h2:after {
 .videoImg{
   width: 100%;
 }
+
+.videoImgSmall{
+  display: none;
+}
+
 .playButton{
   position: absolute;
   border: none;
@@ -562,7 +587,7 @@ h2:after {
 
   /*HERO*/
   .hero .container{
-    height: 590px;
+    height: 500px;
     background-position: -5px -120px;
     background-size: auto 620px;
   }
@@ -588,5 +613,166 @@ h2:after {
     line-height: 24px;
     margin-top: 36px;
     margin-bottom: 60px;
+  }
+  
+  .skillsItems{
+    gap: 30px 40px;
+  }
+
+  .skillItem {
+    width: 300px;
+    height: 224px;
+    margin-top: 5px;
+  }
+  
+  .skillTitle{
+    margin-top: 80px;
+  }
+
+  .skillDescription {
+    line-height: 22px;
+    padding: 0 10px;
+    margin-top: 21px;
+  }
+
+  .skill .container{
+    margin-bottom: 41px;
+  }
+
+  .portfolio .buttonWrapper{
+    margin-top: 70px;
+  }
+
+  .video .container{
+    padding: 20px 0 0 0;
+  }
+
+  .video .titleСontainer{
+    width: calc(50% - 20px);
+  }
+
+  .videoImg{
+    display: none;
+  }
+  
+  .videoPlayer{
+    margin-top: 70px;
+  }
+  .videoImgSmall{
+    display: flex;
+    width: 100%;
+  }
+  
+  .playIcon{
+    width: 65px;
+    height: 65px;
+  }
+
+  .priceItems{
+    margin-top: 70px;
+    gap: 50px;
+  }
+  .priceItem{
+    width: 420px;
+    height: 505px;
+  }
+
+  .contact .container{
+    margin-top: 60px;
+    justify-content: center;
+    background-image: url(./assets/img/contactsBg-small.jpg);
+    min-height: 600px;
+    background-size: auto 600px;
+  }
+
+  .contactWrapper{
+    width: 450px;
+    padding-top: 0;
+  }
+
+  .contactTitle{
+    text-align: center;
+    margin-top: 32px;
+  }
+
+  .contactForm {
+    margin-top: 32px;
+    align-items: center;
+  }
+
+  .contactForm .input{
+    width: 100%;
+  }
+
+  .footer .container{
+    margin-top: 0;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer .footerItem:first-child{
+    word-spacing: 19px;
+  }
+
+  .footer .rss{
+    margin-left: 0;
+  }
+
+  .footer .footerItem:last-child{
+    margin-top: 16px;
+  }
+
+  .header .nav.open{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+  }
+  
+
+  .header .nav.open .navList{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 620px;
+    height: 100%;
+    background-color: black;
+    margin-right: 0;
+    padding-top: 134px;
+    padding-left: 112px;
+    font-size: 35px;
+    line-height: 72.5px;
+  }
+
+  .header .nav.open .navList .navItem{
+    margin-bottom: 16px;
+  }
+    
+}
+
+@media (max-width: 620px){
+  .header .nav.open .navList{
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .header .langSwitch{
+    display: none;
+  }
+  
+  .hero .contentHero{
+    width: 80%;
+  }
+
+  .portfolio .portfolioItems img{
+    width: 100%;
   }
 }
