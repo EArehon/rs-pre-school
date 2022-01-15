@@ -3,6 +3,7 @@ console.log("Оценка - 110 баллов \n\nВыполненные пунк
 const hamburger = document.querySelector('.hamburgerMenu');
 const nav = document.querySelector('.nav');
 
+
 function toggleMenu() {
     hamburger.classList.toggle('open');
     nav.classList.toggle('open');
@@ -10,3 +11,12 @@ function toggleMenu() {
 
 hamburger.addEventListener('click', toggleMenu);
 
+nav.addEventListener('click', closeMenu);
+
+function closeMenu(event){
+  if (event.target.classList.contains('navLink')) {
+    nav.classList.remove('open');
+    hamburger.classList.remove('open');
+  
+  }
+}

@@ -58,6 +58,11 @@ body{
   color: var(--colorWhite);
 }
 
+.wrap{
+  position: relative;
+  overflow-x: hidden;
+}
+
 .container {
   max-width: 1440px;
   margin: 0 auto;
@@ -152,6 +157,7 @@ body{
   -webkit-mask-image: url("./assets/svg/hamburger.svg");
   -webkit-mask-size: cover;
   transition: 0.3s;
+  z-index: 5;
 }
 
 .hamburgerMenu:hover{
@@ -572,9 +578,7 @@ h2:after {
     background-position: -5px -30px;
   }
 
-  .nav {
-    display: none;
-  }
+  
 
   .hamburgerMenu{
     display: block;
@@ -722,6 +726,56 @@ h2:after {
     margin-top: 16px;
   }
 
+  body{
+    overflow-x: hidden;
+   }
+
+  
+  
+  .nav.open::before{
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 1024px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+  }
+
+  .nav {
+    display: flex;
+    position: absolute;
+    width: 620px;
+    min-height: 1024px;
+    background-color: #000;
+    right: -620px;
+    top: 0;
+    transition: .5s ease-in-out;
+    font-size: 35px;
+    line-height: 72.5px;
+    z-index: 3;
+  }
+
+  .header .open{
+    top: 0;
+    right: 0;
+    transition: .5s ease-in-out;
+  }
+  
+  .header .navList{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-right: 0;
+    padding-top: 134px;
+    padding-left: 112px;
+    
+  }
+  /*
   .header .nav.open{
     display: flex;
     justify-content: flex-end;
@@ -730,13 +784,13 @@ h2:after {
     top: 0;
     right: 0;
     width: 100%;
-    height: 100%;
+    min-height: 1024px;
     background-color: rgba(0, 0, 0, 0.5);
     transition: 0.3s;
+    overflow-x: hidden;
   }
-  
 
-  .header .nav.open .navList{
+  header .nav .navList {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -749,16 +803,24 @@ h2:after {
     padding-left: 112px;
     font-size: 35px;
     line-height: 72.5px;
+    position: absolute;
+    right: -620px;
+    transition: 1.5s;
   }
 
-  .header .nav.open .navList .navItem{
+  .header .nav.open .navList{
+    right: 0;
+    transition: 1.5s;
+  } */
+
+  .header .nav .navList .navItem {
     margin-bottom: 16px;
   }
     
 }
 
 @media (max-width: 620px){
-  .header .nav.open .navList{
+  .header .nav{
     width: 100%;
   }
 }
@@ -775,4 +837,12 @@ h2:after {
   .portfolio .portfolioItems img{
     width: 100%;
   }
+}
+
+
+.overlay {
+  background-color: rgba(0,0,0,0.7); 
+  height: 100%;
+  position: absolute;
+  width: 100%;
 }
