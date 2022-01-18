@@ -38,9 +38,9 @@ function changeImage(event) {
 
 //функция кэширования изображений
 function preloadImages(season){
-  for(let i = 0; i <= 6; i++) {
+  for(let i = 0; i < 6; i++) {
     const img = new Image();
-    img.src = `./assets/img/${season}/${i}.jpg`;
+    img.src = `./assets/img/${season}/${i+1}.jpg`;
   }
 }
 
