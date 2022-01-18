@@ -9,9 +9,9 @@
     <title>Portfolio</title>
 </head>
 <body>
-  
-    <header>
-      <div class="container containerHeader">
+  <div class="wrap">
+    <header class="header">
+      <div class="container">
           
           <div class="logo">
             <svg class="logoIcon">
@@ -33,13 +33,17 @@
             <span class="langSwitchLink active">en</span> / <span class="langSwitchLink">ru</span>
           </div>
 
+          <div class="hamburgerMenu">
+            <span></span>
+          </div>
+
       </div>
     </header>
   
   <main>
     
     <section class="hero">
-      <div class="container containerHero">
+      <div class="container">
         <div class="contentHero">
           <h1 class="titleHero">Alexa Rise</h1>
           <p class="about">Save sincere emotions, romantic feelings and happy moments of life together with professional photographer Alexa Rise</p>
@@ -94,12 +98,12 @@
         </div>
 
         <div class="portfolioItems">
-          <img src="assets/img/portfolio-img.png" alt="Осень 1">
-          <img src="assets/img/portfolio-img-1.png" alt="Осень 2">
-          <img src="assets/img/portfolio-img-2.png" alt="Осень 3">
-          <img src="assets/img/portfolio-img-3.png" alt="Осень 4">
-          <img src="assets/img/portfolio-img-4.png" alt="Осень 5">
-          <img src="assets/img/portfolio-img-5.png" alt="Осень 6">
+          <img src="assets/img/portfolio-img.jpg" alt="Осень 1">
+          <img src="assets/img/portfolio-img-1.jpg" alt="Осень 2">
+          <img src="assets/img/portfolio-img-2.jpg" alt="Осень 3">
+          <img src="assets/img/portfolio-img-3.jpg" alt="Осень 4">
+          <img src="assets/img/portfolio-img-4.jpg" alt="Осень 5">
+          <img src="assets/img/portfolio-img-5.jpg" alt="Осень 6">
         </div>
 
       </div>
@@ -112,8 +116,8 @@
         </div>
         
         <div class="videoPlayer">
-          <img src="./assets/img/video-player.jpg" alt="Video" class="video">
-          
+          <img src="./assets/img/video-player.jpg" alt="Video" class="videoImg">
+          <img src="./assets/img/video-player-small.jpg" alt="Video" class="videoImgSmall">
             <button class="playButton" onclick="return false">
               <svg class="playIcon">
                 <use xlink:href="assets/svg/sprite.svg#Play"></use>
@@ -185,7 +189,7 @@
 
   <footer class="footer">
     <div class="container">
-      <div class="footerItem"><a href="https://github.com/EArehon" class="footerLink">© 2022 github</a></div>
+      <div class="footerItem"><a href="https://github.com/EArehon" class="footerLink">© 2022 EArehon</a></div>
       <div class="footerItem rss"><a href="https://rs.school/js-stage0/" class="footerLink">Rolling Scopes School</a></div>
       <div class="footerItem">
         <ul class="socialLinkList">
@@ -215,6 +219,6 @@
   </footer>
 
   <script src="index.js"></script>
-
+</div>
 </body>
 </html>
