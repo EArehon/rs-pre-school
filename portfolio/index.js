@@ -2,50 +2,41 @@ console.log("Оценка - 85 баллов \n\nВыполненные пунк�
 
 const hamburger = document.querySelector('.hamburgerMenu');
 const nav = document.querySelector('.nav');
+const portfolioImages = document.querySelectorAll('.portfolioImage');
+const portfolioBtns = document.querySelector('.buttonWrapper');
+
+const seasons = ['winter', 'spring', 'summer', 'autumn'];
 
 
-function toggleMenu() {
-    hamburger.classList.toggle('open');
-    nav.classList.toggle('open');
-  }
 
 hamburger.addEventListener('click', toggleMenu);
-
 nav.addEventListener('click', closeMenu);
+portfolioBtns.addEventListener('click', changeImage);
+seasons.forEach( element => preloadImages(element));
 
+//закрытие меню по нажатию на ссылку
 function closeMenu(event){
   if (event.target.classList.contains('navLink')) {
     nav.classList.remove('open');
     hamburger.classList.remove('open');
-  
   }
 }
 
+//открытие\закрытие меню по нажатию на иконку гамбургера
+function toggleMenu() {
+  hamburger.classList.toggle('open');
+  nav.classList.toggle('open');
+}
 
-const portfolioBtn = document.querySelector('.buttonSwitch1');
-const portfolioImages = document.querySelectorAll('.portfolioImage');
-
-//portfolioBtn.addEventListener('click', () => {portfolioImages.forEach((img, index) => img.src = `./assets/img/winter/${index + 1}.jpg`)});
-
-const portfolioBtns = document.querySelector('.buttonWrapper');
-
+//функция смены изображений в портфолио
 function changeImage(event) {
   if(event.target.classList.contains('buttonSwitch')){
-    //portfolioBtns.forEach(element => element.classList.remove('active'));
+    changeClassActive('buttonSwitch', event.target);
     portfolioImages.forEach((img, index) => img.src = `./assets/img/${event.target.dataset.season}/${index + 1}.jpg`);
   }
 }
 
-function changeClassActive(){
-
-}
-
-portfolioBtns.addEventListener('click', changeImage);
-
-const seasons = ['winter', 'spring', 'summer', 'autumn'];
-
-seasons.forEach( element => preloadImages(element));
-
+//функция кэширования изображений
 function preloadImages(season){
   for(let i = 0; i <= 6; i++) {
     const img = new Image();
@@ -53,7 +44,10 @@ function preloadImages(season){
   }
 }
 
-
-
+//функция удаления клааса 'active' у элемента ферстки
+function changeClassActive(elemClass, elemTarget ){
+  document.querySelectorAll(`.${elemClass}`).forEach(elem => elem.classList.remove('active'));
+  elemTarget.classList.add('active');
+}
 
 

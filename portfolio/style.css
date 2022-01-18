@@ -215,23 +215,23 @@ body {
   width: 220px;
   height: 55px;
   font-size: 20px;
-  transition: color 0.3s, background-color 0.3s;
+  transition: all 0.3s;
 }
 
 .buttonSwitch:hover {
   color: var(--colorWhite);
-  transition: color 0.3s;
+  transition: all 0.3s;
 }
 
 .portfolio .active {
   color: var(--colorBlack);
   background-color: var(--colorGold);
-  transition: color 0.3s, background-color 0.3s;
+  transition: all 0.3s;
 }
 
 .portfolio .active:hover {
   color: var(--colorWhite);
-  transition: color 0.3s;
+  transition: all 0.3s;
 }
 
 .titleСontainer {
