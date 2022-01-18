@@ -1,5 +1,7 @@
 console.log("Оценка - 85 баллов \n\nВыполненные пункты:\n  1) Вёрстка соответствует макету. +48 \n  2) Ни на одном из разрешений до 320px включительно не появляется горизонтальная полоса прокрутки +15 \n  3) На ширине экрана 768рх и меньше реализовано адаптивное меню +22 ");
 
+import i18Obj from './translate.js';
+
 const hamburger = document.querySelector('.hamburgerMenu');
 const nav = document.querySelector('.nav');
 const portfolioImages = document.querySelectorAll('.portfolioImage');
