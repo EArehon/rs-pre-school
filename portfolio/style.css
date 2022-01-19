@@ -53,7 +53,7 @@ html {
 }
 
 body {
-  background-color: black;
+  background-color: var(--colorBlack);
   font-family: var(--fontInter);
   color: var(--colorWhite);
 }
@@ -147,6 +147,28 @@ body {
 
 .langSwitch .active {
   color: var(--colorGold);
+}
+
+.colorSwitch {
+  width: 45px;
+  height: 45px;
+  margin-left: 30px;
+  background-color: var(--colorWhite);
+  -webkit-mask: url(./assets/svg/sun.svg);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  transition: .3s;
+}
+
+.colorSwitch.dark {
+  -webkit-mask: url(./assets/svg/moon.svg);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
+
+.colorSwitch:hover {
+  background-color: var(--colorGold);
+  transition: .3s;
 }
 
 .hamburgerMenu {

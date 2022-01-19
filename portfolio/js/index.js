@@ -8,15 +8,22 @@ const nav = document.querySelector('.nav');
 const portfolioImages = document.querySelectorAll('.portfolioImage');
 const portfolioBtns = document.querySelector('.buttonWrapper');
 const langSwitch = document.querySelector('.langSwitch');
+const colorSwitch = document.querySelector('.colorSwitch');
 
 const seasons = ['winter', 'spring', 'summer', 'autumn'];
-
 
 langSwitch.addEventListener('click', changeLang);
 hamburger.addEventListener('click', toggleMenu);
 nav.addEventListener('click', closeMenu);
 portfolioBtns.addEventListener('click', changeImage);
 seasons.forEach( element => preloadImages(element));
+colorSwitch.addEventListener('click', changeTheme);
+
+//смена светлой темы на темную
+function changeTheme(){
+  colorSwitch.classList.toggle('dark');
+  document.body.classList.toggle('whiteTheme');
+}
 
 //закрытие меню по нажатию на ссылку
 function closeMenu(event){
@@ -76,8 +83,7 @@ function getTranslate(lng){
   document.querySelectorAll("[data-i18nInput]").forEach(elem => elem.placeholder = i18Obj[lng][elem.dataset.i18ninput]);
 }
 
-
-
+//получение значений оформления страницы из локального хранилища
 function getLocalStorage() {
   if(localStorage.getItem('lang')) {
     const lang = localStorage.getItem('lang');
