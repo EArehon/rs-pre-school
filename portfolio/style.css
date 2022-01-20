@@ -247,6 +247,7 @@ body {
 
 .buttonSwitch:hover {
   color: var(--colorWhite);
+  box-shadow: inset 0 -5em 0 0 var(--colorGold);
   transition: all 0.3s;
 }
 
@@ -255,7 +256,6 @@ body {
 }
 
 .whiteTheme .buttonSwitch:hover{
-  background-color: var(--colorGold);
   color: var(--colorBlack);
 }
 
