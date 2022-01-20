@@ -9,8 +9,9 @@ const portfolioImages = document.querySelectorAll('.portfolioImage');
 const portfolioBtns = document.querySelector('.buttonWrapper');
 const langSwitch = document.querySelector('.langSwitch');
 const colorSwitch = document.querySelector('.colorSwitch');
-
+const colorTheme = { 'dark' : { 'colorBlackk' : '#000', 'colorWhite' : '#fff', 'next' : 'white' }, 'white' : {'colorBlackk' : '#fff', 'colorWhite' : '#000', 'next' : 'dark' }};
 const seasons = ['winter', 'spring', 'summer', 'autumn'];
+let color = ['#fff', '#000'];
 
 langSwitch.addEventListener('click', changeLang);
 hamburger.addEventListener('click', toggleMenu);
@@ -20,9 +21,17 @@ seasons.forEach( element => preloadImages(element));
 colorSwitch.addEventListener('click', changeTheme);
 
 //смена светлой темы на темную
-function changeTheme(){
+function changeTheme(event){
+  getTheme(document.body.dataset.theme);
   colorSwitch.classList.toggle('dark');
   document.body.classList.toggle('whiteTheme');
+}
+
+function getTheme(currentTheme) {
+  document.documentElement.style.setProperty('--colorBlack', colorTheme[currentTheme]['colorWhite']);
+  document.documentElement.style.setProperty('--colorWhite', colorTheme[currentTheme]['colorBlackk']);
+  localStorage.setItem('theme', colorTheme[currentTheme]['next']);
+  document.body.dataset.theme = colorTheme[currentTheme]['next'];
 }
 
 //закрытие меню по нажатию на ссылку
@@ -67,7 +76,6 @@ function changeClassActive(elemClass, elemTarget ){
   elemTarget.classList.add('active');
 }
 
-
 //смена языка 
 function changeLang(event){
   if(event.target.classList.contains('langSwitchLink')){
@@ -94,5 +102,10 @@ function getLocalStorage() {
     const season = localStorage.getItem('season');
     getImage(season);
     changeClassActive('buttonSwitch', document.querySelector(`[data-season=${season}]`));
+  }
+  if(localStorage.getItem('theme')=='white') {
+    getTheme('dark');
+    colorSwitch.classList.toggle('dark');
+    document.body.classList.toggle('whiteTheme');
   }
 }

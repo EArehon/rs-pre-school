@@ -41,6 +41,11 @@
   --fontMerriweather: 'Merriweather';
 }
 
+.whiteTheme :root{
+  --colorBlack: #fff;
+  --colorWhite: #000;
+}
+
 @media (max-width: 768px) {
   :root{
     --fontSize40: 32px;
@@ -91,7 +96,7 @@ body {
   width: 100%;
   height: 100%;
   box-sizing: content-box;
-  fill: var(--colorWhite);
+  fill: white;
   transition: 0.3s;
   }
 
@@ -115,7 +120,7 @@ body {
 }
 
 .navLink {
-  color: var(--colorWhite);
+  color: white;
   padding: 0 15px;
   text-decoration: none;
   transition: color .3s;
@@ -134,7 +139,7 @@ body {
 }
 
 .langSwitchLink {
-  color: var(--colorWhite);
+  color: white;
   text-decoration: none;
   transition: color .3s;
 }
@@ -153,7 +158,7 @@ body {
   width: 45px;
   height: 45px;
   margin-left: 30px;
-  background-color: var(--colorWhite);
+  background-color: white;
   -webkit-mask: url(./assets/svg/sun.svg);
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: center;
@@ -198,13 +203,13 @@ body {
   font-size: var(--fontSize60);
   font-size: 60px;
   line-height: 120px;
-  color: var(--colorWhite);
+  color: white;
   font-family: 'Merriweather';
   font-weight: 700;
 }
 
 .hero .about {
-  color: var(--colorWhite);
+  color: white;
   font-family: var(--fontInter);
   font-size: 20px;
   line-height: 40px;
@@ -224,7 +229,7 @@ body {
 }
 
 .button:hover {
-  color: var(--colorWhite);
+  color: white;
   transition: color 0.3s;
 }
 
@@ -245,15 +250,20 @@ body {
   transition: all 0.3s;
 }
 
+.whiteTheme .buttonSwitch{
+  color: var(--colorWhite);
+}
+
+.whiteTheme .buttonSwitch:hover{
+  background-color: var(--colorGold);
+  color: var(--colorBlack);
+}
+
 .portfolio .active {
   color: var(--colorBlack);
   background-color: var(--colorGold);
   transition: all 0.3s;
-}
-
-.portfolio .active:hover {
-  color: var(--colorWhite);
-  transition: all 0.3s;
+  cursor: default;
 }
 
 .titleСontainer {
@@ -274,17 +284,26 @@ body {
   line-height: var(--lineHeight80);
 }
 
+.whiteTheme .title{
+  color: var(--colorWhite);
+}
+
 h2 span {
   background: var(--colorBlack);
   margin: 0 20px;
 }
 
-h2:before,
-h2:after {
+h2::before,
+h2::after {
   background: var(--colorGold);
   height: 2px;
   flex: 1;
   content: '';
+}
+
+.whiteTheme h2::before,
+.whiteTheme h2::after {
+  background-color: var(--colorWhite);
 }
 
 .skillContainer {
@@ -401,7 +420,7 @@ h2:after {
 .playIcon {
   width: 130px;
   height: 130px;
-  fill: var(--colorWhite);
+  fill: white;
   transition: 0.3s;
 }
 
@@ -496,7 +515,7 @@ h2:after {
 }
 
 .contact .input:focus {
-  border: 2px solid var(--colorWhite);
+  border: 2px solid white;
   border-radius: 0;
   outline: none;
 }
@@ -520,20 +539,17 @@ h2:after {
 .footer .container {
   display: flex;
   justify-content: space-between;
-  margin-top: 35px;
-  margin-bottom: 35px;
+  padding-top: 55px;
+  padding-bottom: 55px;
+  background-color: black;
 }
 
 .footer .footerLink {
-  color: var(--colorWhite);
+  color: white;
   text-decoration: none;
   font-size: 20px;
   line-height: 40px;
   transition: color 0.3s;
-}
-
-.rss {
-  margin-left: 19px;
 }
 
 .footer .footerLink:hover {
@@ -565,7 +581,7 @@ h2:after {
 }
 
 .socialIcon {
-  fill: var(--colorWhite);
+  fill: white;
   width: 32px;
   height: 32px;
   transition: 0.3s;
