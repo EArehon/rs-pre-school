@@ -629,13 +629,13 @@ h2::after {
   .titleHero {
     font-size: 32px;
     line-height: 1;
-    color: var(--colorWhite);
+    color: white;
     font-family: 'Merriweather';
     font-weight: 400;
   }
   
   .hero .about {
-    color: var(--colorWhite);
+    color: white;
     font-family: var(--fontInter);
     font-size: 20px;
     line-height: 24px;
