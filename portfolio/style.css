@@ -791,6 +791,10 @@ h2:after {
     z-index: 3;
   }
 
+  .nav.open{
+    overflow: auto;
+  }
+
   .header .open {
     top: 0;
     right: 0;
