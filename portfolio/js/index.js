@@ -38,6 +38,7 @@ function closeMenu(event){
   if (event.target.classList.contains('navLink')) {
     nav.classList.remove('open');
     hamburger.classList.remove('open');
+    document.body.classList.remove('open');
   }
 }
 
@@ -45,6 +46,7 @@ function closeMenu(event){
 function toggleMenu() {
   hamburger.classList.toggle('open');
   nav.classList.toggle('open');
+  document.body.classList.toggle('open');
 }
 
 //функция смены изображений в портфолио
