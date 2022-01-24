@@ -41,6 +41,11 @@
   --fontMerriweather: 'Merriweather';
 }
 
+.whiteTheme :root{
+  --colorBlack: #fff;
+  --colorWhite: #000;
+}
+
 @media (max-width: 768px) {
   :root{
     --fontSize40: 32px;
@@ -53,7 +58,7 @@ html {
 }
 
 body {
-  background-color: black;
+  background-color: var(--colorBlack);
   font-family: var(--fontInter);
   color: var(--colorWhite);
 }
@@ -91,7 +96,7 @@ body {
   width: 100%;
   height: 100%;
   box-sizing: content-box;
-  fill: var(--colorWhite);
+  fill: white;
   transition: 0.3s;
   }
 
@@ -107,6 +112,7 @@ body {
 }
 
 .navList {
+  background-color: transparent;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -119,6 +125,11 @@ body {
   padding: 0 15px;
   text-decoration: none;
   transition: color .3s;
+}
+
+.whiteTheme .navLink{
+  color: white;
+  transition: .3s;
 }
 
 .navLink:hover {
@@ -134,7 +145,7 @@ body {
 }
 
 .langSwitchLink {
-  color: var(--colorWhite);
+  color: white;
   text-decoration: none;
   transition: color .3s;
 }
@@ -147,6 +158,29 @@ body {
 
 .langSwitch .active {
   color: var(--colorGold);
+}
+
+.colorSwitch {
+  width: 45px;
+  height: 45px;
+  margin-left: 30px;
+  background-color: white;
+  -webkit-mask: url(./assets/svg/sun.svg);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  transition: .3s;
+}
+
+.colorSwitch.dark {
+  -webkit-mask: url(./assets/svg/moon.svg);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
+
+.colorSwitch:hover {
+  background-color: var(--colorGold);
+  cursor: pointer;
+  transition: .3s;
 }
 
 .hamburgerMenu {
@@ -176,13 +210,13 @@ body {
   font-size: var(--fontSize60);
   font-size: 60px;
   line-height: 120px;
-  color: var(--colorWhite);
+  color: white;
   font-family: 'Merriweather';
   font-weight: 700;
 }
 
 .hero .about {
-  color: var(--colorWhite);
+  color: white;
   font-family: var(--fontInter);
   font-size: 20px;
   line-height: 40px;
@@ -202,7 +236,7 @@ body {
 }
 
 .button:hover {
-  color: var(--colorWhite);
+  color: white;
   transition: color 0.3s;
 }
 
@@ -215,23 +249,28 @@ body {
   width: 220px;
   height: 55px;
   font-size: 20px;
-  transition: color 0.3s, background-color 0.3s;
+  transition: all 0.3s;
 }
 
 .buttonSwitch:hover {
   color: var(--colorWhite);
-  transition: color 0.3s;
+  box-shadow: inset 0 -5em 0 0 var(--colorGold);
+  transition: all 0.3s;
+}
+
+.whiteTheme .buttonSwitch{
+  color: var(--colorWhite);
+}
+
+.whiteTheme .buttonSwitch:hover{
+  color: var(--colorBlack);
 }
 
 .portfolio .active {
   color: var(--colorBlack);
   background-color: var(--colorGold);
-  transition: color 0.3s, background-color 0.3s;
-}
-
-.portfolio .active:hover {
-  color: var(--colorWhite);
-  transition: color 0.3s;
+  transition: all 0.3s;
+  cursor: default;
 }
 
 .titleСontainer {
@@ -252,17 +291,26 @@ body {
   line-height: var(--lineHeight80);
 }
 
+.whiteTheme .title{
+  color: var(--colorWhite);
+}
+
 h2 span {
   background: var(--colorBlack);
   margin: 0 20px;
 }
 
-h2:before,
-h2:after {
+h2::before,
+h2::after {
   background: var(--colorGold);
   height: 2px;
   flex: 1;
   content: '';
+}
+
+.whiteTheme h2::before,
+.whiteTheme h2::after {
+  background-color: var(--colorWhite);
 }
 
 .skillContainer {
@@ -379,7 +427,7 @@ h2:after {
 .playIcon {
   width: 130px;
   height: 130px;
-  fill: var(--colorWhite);
+  fill: white;
   transition: 0.3s;
 }
 
@@ -474,7 +522,7 @@ h2:after {
 }
 
 .contact .input:focus {
-  border: 2px solid var(--colorWhite);
+  border: 2px solid white;
   border-radius: 0;
   outline: none;
 }
@@ -498,12 +546,13 @@ h2:after {
 .footer .container {
   display: flex;
   justify-content: space-between;
-  margin-top: 35px;
-  margin-bottom: 35px;
+  padding-top: 55px;
+  padding-bottom: 55px;
+  background-color: black;
 }
 
 .footer .footerLink {
-  color: var(--colorWhite);
+  color: white;
   text-decoration: none;
   font-size: 20px;
   line-height: 40px;
@@ -539,7 +588,7 @@ h2:after {
 }
 
 .socialIcon {
-  fill: var(--colorWhite);
+  fill: white;
   width: 32px;
   height: 32px;
   transition: 0.3s;
@@ -587,13 +636,13 @@ h2:after {
   .titleHero {
     font-size: 32px;
     line-height: 1;
-    color: var(--colorWhite);
+    color: white;
     font-family: 'Merriweather';
     font-weight: 400;
   }
   
   .hero .about {
-    color: var(--colorWhite);
+    color: white;
     font-family: var(--fontInter);
     font-size: 20px;
     line-height: 24px;
@@ -712,6 +761,10 @@ h2:after {
     overflow-x: hidden;
    }
 
+  .hamburgerMenu:hover{
+    cursor: pointer;
+  }
+
   body.open{
     overflow: hidden;
   }
@@ -726,6 +779,18 @@ h2:after {
     z-index: 10;
     position: absolute;
     transition: .3s;
+  }
+
+  .whiteTheme .hamburgerMenu.open span,
+  .whiteTheme .hamburgerMenu.open::before,
+  .whiteTheme .hamburgerMenu.open::after{
+    background-color: var(--colorWhite);
+  }
+
+  .whiteTheme .hamburgerMenu.open:hover span,
+  .whiteTheme .hamburgerMenu.open:hover::before,
+  .whiteTheme .hamburgerMenu.open:hover::after{
+    background-color: var(--colorGold);
   }
 
   .hamburgerMenu::before, 
@@ -753,6 +818,8 @@ h2:after {
     transition: .3s;
   }
 
+
+
   .hamburgerMenu.open span{
     transform: scale(0) translate(0px, -50%);  
   }
@@ -774,7 +841,7 @@ h2:after {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: -1;
+    z-index: -2;
   }
 
   .nav {
@@ -809,11 +876,27 @@ h2:after {
     margin-right: 0;
     padding-top: 134px;
     padding-left: 112px;
-    
+    background-color: var(--colorBlack);
+  }
+
+  .whiteTheme .header .navList{
+    background-color: white;
+    width: 100%;
   }
   
   .header .nav .navList .navItem {
     margin-bottom: 16px;
+  }
+  
+
+
+  .header .navLink {
+    color: var(--colorWhite);
+  }
+  
+  .header .navLink:hover {
+    color: var(--colorGold);
+    transition: .3s;
   }
     
 }
