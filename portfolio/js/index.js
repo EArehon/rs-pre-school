@@ -11,7 +11,6 @@ const langSwitch = document.querySelector('.langSwitch');
 const colorSwitch = document.querySelector('.colorSwitch');
 const colorTheme = { 'dark' : { 'colorBlackk' : '#000', 'colorWhite' : '#fff', 'next' : 'white' }, 'white' : {'colorBlackk' : '#fff', 'colorWhite' : '#000', 'next' : 'dark' }};
 const seasons = ['winter', 'spring', 'summer', 'autumn'];
-let color = ['#fff', '#000'];
 
 langSwitch.addEventListener('click', changeLang);
 hamburger.addEventListener('click', toggleMenu);
