@@ -54,20 +54,19 @@ function changeImage(event) {
   if(event.target.classList.contains('buttonSwitch')){
     changeClassActive('buttonSwitch', event.target);
     getImage(event.target.dataset.season);
-    //portfolioImages.forEach((img, index) => img.src = `./assets/img/${event.target.dataset.season}/${index + 1}.jpg`);
     localStorage.setItem('season', event.target.dataset.season);
   }
 }
 
 function getImage(season){
-  portfolioImages.forEach((img, index) => img.src = `./assets/img/${season}/${index + 1}.jpg`);
+  portfolioImages.forEach((img, index) => img.src = `./assets/img/${season}/${index + 1}.webp`);
 }
 
 //функция кэширования изображений
 function preloadImages(season){
   for(let i = 0; i < 6; i++) {
     const img = new Image();
-    img.src = `./assets/img/${season}/${i+1}.jpg`;
+    img.src = `./assets/img/${season}/${i+1}.webp`;
   }
 }
 

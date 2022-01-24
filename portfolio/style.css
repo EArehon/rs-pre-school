@@ -4,30 +4,6 @@
   padding: 0;
 }
 
-@font-face {
-  font-family: 'Merriweather';
-  src: url("assets/fonts/Merriweather-Bold.ttf");
-  font-weight: 700;
-}
-
-@font-face {
-  font-family: 'Merriweather';
-  src: url("assets/fonts/Merriweather-Regular.ttf");
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: 'Inter';
-  src: url("assets/fonts/Inter-Regular.ttf");
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: 'Inter';
-  src: url("assets/fonts/Inter-Bold.ttf");
-  font-weight: 700;
-}
-
 :root {
   --colorGold: #bdae82;
   --colorBlack: #000;
@@ -37,8 +13,8 @@
   --fontSize20: 20px;
   --lineHeight80: 80px;
   --lineHeight40: 40px;
-  --fontInter: 'Inter';
-  --fontMerriweather: 'Merriweather';
+  --fontInter: 'Inter', sans-serif;
+  --fontMerriweather: 'Merriweather', serif;
 }
 
 .whiteTheme :root{
@@ -77,7 +53,7 @@ body {
 /* HEADER */
 
 .header .container {
-  background: url('assets/img/headerBg.jpg');
+  background: url('assets/img/headerBg.webp');
   background-repeat: no-repeat;
   background-position: center 0;
   display: flex;
@@ -194,7 +170,7 @@ body {
 /* HERO SECTION */
 
 .hero .container {
-  background-image: url(assets/img/headerBg.jpg);
+  background-image: url(assets/img/headerBg.webp);
   background-position: center -90px;
   background-repeat: no-repeat;
   height: 820px;
@@ -395,6 +371,10 @@ h2::after {
   gap: 25px;
 }
 
+.portfolioImages {
+  aspect-ratio:  450/560;
+}
+
 /* VIDEO */
 
 .video .container {
@@ -411,6 +391,7 @@ h2::after {
 
 .videoImg {
   width: 100%;
+  height: 100%;
 }
 
 .videoImgSmall {
@@ -485,7 +466,7 @@ h2::after {
 
 .contact .container {
   margin-top: 80px;
-  background-image: url('./assets/img/contactsBg.jpg');
+  background-image: url('./assets/img/contactsBg.webp');
   background-size: auto 700px;
   background-position: center center;
   min-height: 700px;
@@ -696,6 +677,7 @@ h2::after {
   .videoImgSmall {
     display: flex;
     width: 100%;
+    height: 100%;
   }
   
   .playIcon {
@@ -715,7 +697,7 @@ h2::after {
   .contact .container {
     margin-top: 60px;
     justify-content: center;
-    background-image: url(./assets/img/contactsBg-small.jpg);
+    background-image: url(./assets/img/contactsBgSmall.webp);
     min-height: 600px;
     background-size: auto 600px;
   }
@@ -840,6 +822,7 @@ h2::after {
     right: 0;
     width: 100%;
     height: 100%;
+    min-height: 620px;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: -2;
   }
@@ -918,6 +901,7 @@ h2::after {
 
   .portfolio .portfolioItems img {
     width: 100%;
+    height: 100%;
   }
 }
 
