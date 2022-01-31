@@ -83,7 +83,7 @@ body {
 }
 
 .nav {
-  font-family: 'Inter';
+  font-family: var(--fontInter);
   font-weight: 400;
 }
 
@@ -450,6 +450,10 @@ h2::after {
   color: var(--colorGold);
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.whiteTheme .priceCost {
+  color: #998c66;
 }
 
 .preciDescription {
