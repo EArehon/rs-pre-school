@@ -121,14 +121,23 @@
         </div>
         
         <div class="videoPlayer">
-          <img src="./assets/img/videoPlayer.webp" alt="Video" width="1400" height="705" class="videoImg">
-          <img src="./assets/img/videoPlayerSmall.webp" alt="Video" width="768" height="418" class="videoImgSmall">
-            <button class="playButton" onclick="return false" aria-label="Play video">
-              <svg class="playIcon">
-                <use xlink:href="assets/svg/sprite.svg#Play"></use>
-              </svg>
-            </button>
+          <img src="./assets/img/videoPlayer.webp" alt="Video poster" width="1400" height="705" class="cover">
           
+          <video src="assets/video/video.mp4"  class="videoSrc"></video>
+          
+          <button class="playButton" onclick="return false" aria-label="Play video">
+            <svg class="playIcon">
+              <use xlink:href="assets/svg/sprite.svg#Play"></use>
+            </svg>
+          </button>
+          
+          <div class="control">
+            <div class="play"></div>
+            <input type="range" name="progress" id="progress" class="progress range" min="0" max="100" step="0.01" aria-label="Progress video">
+            <div class="volume"></div>
+            <input type="range" name="volumeBar" id="volumeBar" class="volumeBar range" min="0" max="1" step="0.001" aria-label="Volume level">
+          </div>
+
         </div>
       </div>
     </section>
@@ -191,6 +200,7 @@
       </div>
     </section>
   </main>
+  
   <footer class="footer">
     <div class="container">
       <div class="footerItem"><a href="https://github.com/EArehon" class="footerLink">© 2022 EArehon</a></div>
@@ -221,6 +231,8 @@
       </div>
     </div>
   </footer>
+
 <script type="module" src="./js/index.js"></script>
+<script src="./js/videoPlayer.js"></script>
 </body>
 </html>
