@@ -8,5 +8,6 @@ async function getData() {
     //console.log(data.length);
     quote.textContent = data[1].text;
     //console.log(data[1].text);
-  }
-  getData();
+}
+
+getData();
