@@ -1,0 +1,292 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+:root {
+    --colorGold: #bdae82;
+    --fontRoboto: 'Roboto', sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  font-family: var(--fontRoboto);
+  font-size: 20px;
+  color: white;
+}
+
+.container {
+    max-width: 1440px;
+    display: flex;
+    margin: 0 auto;
+    padding: 5px 40px;
+    line-height: 50px;
+}
+
+.footer .container {
+    justify-content: space-between;
+    z-index: 5;
+    background-color: black;
+}
+
+.git {
+  word-spacing: 15px;
+}
+
+.git .git-link {
+    color: white;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.git .git-link:hover {
+    color: #b9b8b8;
+    transition: .3s;
+}
+
+.rss-logo {
+    width: 135px;
+    height: 50px;
+    background-color: white;
+    display: block;
+    -webkit-mask: url(./assets/svg/rss.svg);
+    -webkit-mask-size: cover;
+    -webkit-mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    transition: .3s;
+}
+
+.rss-logo:hover {
+    background-color: #b9b8b8;
+    transition: .3s;
+}
+
+.main{
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 60px);
+    overflow: hidden;
+
+}
+
+.main .bg{
+  position: absolute;
+  background-image: url(./assets/img/bf4.jpg);
+  filter: blur(7px);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: .5s;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+main .container {
+    height: 100%;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    line-height: auto;
+}
+
+.main .player {
+    position: absolute;
+    width: 330px;
+    z-index: 10;
+    border-radius: 20px;
+    line-height: 20px;
+    box-shadow: 0 0 5px 3px #313131;
+}
+
+.player .cover {
+    width: 100%;
+    height: 250px;
+    background-image: url(./assets/img/bf4.jpg);
+    background-size: cover;
+    border-radius: 20px 20px 0 0;
+    transition: .5s;
+}
+
+.player .title {
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+    color: #d7d7d7;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.player .song {
+    font-size: 15px;
+    color: #bcbcbc;
+}
+
+.player .control {
+    padding: 20px;
+    background-color: #313131;
+    border-radius: 0 0 20px 20px;
+}
+
+.player .button {
+    display: flex;
+    align-items: center;
+}
+
+
+.player .button-control {
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.player .random {
+    width: 30px;
+    height: 20px;
+    background-color: white;
+    -webkit-mask: url(./assets/svg/random.svg);
+    -webkit-mask-repeat: no-repeat;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.player .random:hover {
+    background-color: #b9b8b8;
+}
+
+.player .repeat {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    -webkit-mask-image: url(./assets/svg/repeat.svg);
+    -webkit-mask-size: cover;
+    transition: .3s;
+}
+
+.player .repeat:hover {
+    background-color: #b9b8b8;
+    transition: .3s;
+}
+
+.player .repeat-once {
+    -webkit-mask-image: url(./assets/svg/repeat-once-thin-svgrepo-com.svg);
+}
+
+.player .active {
+    transition: .3s ease-in-out;
+    background-color: #10bb5b; 
+}
+
+.player .active:hover {
+    transition: .3s ease-in-out;
+    background-color: #0c9748; 
+}
+
+.player .play {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    -webkit-mask: url(./assets/svg/play-circle-solid.svg);
+    background-size: cover;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.player .pause {
+    -webkit-mask: url(./assets/svg/pause-circle-solid.svg);
+    transition: .3s ease-in-out;
+    
+}
+
+.player .prev {
+    -webkit-mask: url(./assets/svg/step-backward-solid.svg);
+}
+
+.player .next {
+    -webkit-mask: url(./assets/svg/step-forward-solid.svg);
+}
+
+.player .next,
+.player .prev {
+    background-color: white;
+    width: 20px;
+    height: 20px;
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    cursor: pointer;
+}
+
+
+.player .play:hover,
+.player .next:hover,
+.player .prev:hover {
+    background-color: #b9b8b8;
+    transition: .3s;
+}
+
+
+
+/******************************************/
+.progress-container {
+    position: relative;
+}
+
+.bar {
+  position: absolute;
+  z-index: 1;
+  left: 1px;
+  top: 10px;
+  width: calc(100% - 2px);
+  height: 6px;
+  border-radius: 10px;
+  background-color: #3c3c3c;
+}
+
+.bar .fill {
+    display: block;
+    width: 0;
+    height: 100%;
+    background-color: rgb(202, 202, 192);
+    border-radius: 10px;
+    z-index: 4;
+    position: absolute;
+}
+
+.progress {
+    position: relative;
+    z-index: 2;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    border-radius: 10px;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+}
+
+.progress::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+    box-shadow: inset 0 0 3px 1px rgba(0, 0, 0, 0);
+}
+
+
+.player .time {
+    display: flex;
+    justify-content: space-between;
+    color: #bcbcbc;
+    font-size: 10px;
+    margin-top: -5px;
+}
