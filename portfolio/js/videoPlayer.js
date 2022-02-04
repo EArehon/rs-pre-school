@@ -29,7 +29,7 @@ updateVolumePull();
 function updateVolumePull () {
     const value = volumeBar.value;
     video.volume = value;
-
+    video.muted = false;
     if (video.volume == 0) {
         volume.classList.add('muted');
     }
