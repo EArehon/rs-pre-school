@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>AudioPlayer</title>
+</head>
+<body>
+  <main class="main">
+    <div class="bg"></div>
+    <div class="container">
+        <div class="player">
+          
+          <div class="cover" class="cover"></div>
+          
+          <div class="control">
+            
+            <div class="title">Johan Skugge & Jukka Rintamaki</div>
+            <div class="song">Battlefield 4 Main Theme</div>  
+            
+            <div class="progress-container">
+              <span class="bar"><span class="fill"></span></span>
+              <input type="range" name="progress" id="progress" class="progress" min="0" max="100" step="0.1" value="0">
+            </div>
+
+            <div class="time">
+              <span class="currentTime">00:00</span>
+              <span class="duration">01:25</span>
+            </div>
+            
+            <div class="button">
+              <div class="random"></div>
+              <div class="button-control">
+                <div class="prev"></div>
+                <div class="play"></div>
+                <div class="next"></div>
+              </div>
+              <div class="repeat"></div>
+            </div>
+            
+          </div>
+        </div>
+        </div>
+  </main>
+
+  <footer class="footer">
+      <div class="container">
+          <div class="git">© 2022 <a href="https://github.com/EArehon" class="git-link">EArehon</a></div>
+          <div class="rss">
+              <a class="rss-logo" href="https://rs.school/js-stage0/"></a>
+          </div>
+      </div>
+  </footer>
+<script src="./index.js"></script>
+</body>
+</html>
