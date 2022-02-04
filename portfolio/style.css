@@ -384,22 +384,117 @@ h2::after {
 .videoPlayer {
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 60px;
+  width: 100%;
 }
 
-.videoImg {
+.videoSrc {
+  width: 100%;
+  height: auto;
+}
+
+.cover {
+  position: absolute;
+  z-index: 10;
   width: 100%;
   height: 100%;
 }
 
-.videoImgSmall {
-  display: none;
+.control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: black;
+  width: 100%;
 }
+
+.play {
+  width: 40px;
+  height: 40px;
+  background-color: lightgrey;
+  -webkit-mask: url(./assets/svg/play.svg);
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  transition: .3s;
+}
+
+.play:hover {
+  background-color: var(--colorGold);
+  transition: .3s;
+  cursor: pointer;
+}
+
+.pause {
+  -webkit-mask-image: url(./assets/svg/pause.svg);
+  transition: .3s;
+}
+
+.range {
+  -webkit-appearance: none;
+  height: 10px;
+  outline: none;
+  border-radius: 5px;
+}
+
+.range::-webkit-slider-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  -webkit-appearance: none;
+  cursor: ew-resize;
+  background-color: white;
+}
+
+.progress{
+  width: calc(80% - 160px);
+}
+
+.volume {
+  width: 40px;
+  height: 40px;
+  background-color: lightgrey;
+  -webkit-mask-image: url(./assets/svg/volume.svg);
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  transition: .3s;
+}
+
+.muted {
+  -webkit-mask-image: url(./assets/svg/mute.svg);
+  transition: .3s;
+}
+
+.volume:hover {
+  background-color: var(--colorGold);
+  transition: .3s;
+  cursor: pointer;
+}
+
+.volumeBar {
+  width: calc(20% - 40px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 .playButton {
   position: absolute;
+  z-index: 15;
   border: none;
   outline: none; 
   background-color: transparent;
@@ -672,18 +767,21 @@ h2::after {
   }
 
   .videoImg {
-    display: none;
-  }
-  
-  .videoPlayer {
-    margin-top: 70px;
-  }
-  .videoImgSmall {
     display: flex;
     width: 100%;
     height: 100%;
   }
+
+  .video {
+    width: 100%;
+    height: 100%;
+  }
   
+  .videoPlayer {
+    margin-top: 70px;
+    width: 100%;
+  }
+   
   .playIcon {
     width: 65px;
     height: 65px;
@@ -696,6 +794,22 @@ h2::after {
   .priceItem {
     width: 420px;
     height: 505px;
+  }
+
+  .control {
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .progress {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 100%;
+  }
+
+  .volumeBar {
+    width: calc(100% - 150px);
   }
 
   .contact .container {
@@ -914,4 +1028,14 @@ h2::after {
   height: 100%;
   position: absolute;
   width: 100%;
+}
+
+.displayNone {
+  display: none;
+  transition: .5s;
+}
+
+.visuallyhidden {
+  opacity: 0;
+  transition: all 1s ease-in-out;
 }
