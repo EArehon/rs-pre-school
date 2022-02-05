@@ -9,7 +9,7 @@ body {
     height: 100%;
     background-color: #0d1117;
     font-family: 'Blinker', sans-serif;
-    color: white;
+    color: #c9d1d9;
 }
 
 .container{
@@ -18,13 +18,86 @@ body {
     padding: 20px;
 }
 
+.button {
+    border: 1px solid #c9d1d9;
+    padding: 10px 30px;
+    background: transparent;
+    color: #c9d1d9;
+    font-size: 14px;
+    position: relative;
+    overflow:hidden;
+    transition: .3s;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: auto;
+        right: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background: #c9d1d9;
+        transition: .3s;
+    }
+    &:hover {
+        cursor: pointer;
+        color: #58a6ff;
+
+        &::after {
+            width: 100%;
+            left: 0;
+        }
+    }
+}
+
+//***HEADER***
+
+.header {
+    .container {
+        line-height: 30px;
+        display: flex;
+
+        .lang {
+            margin-left: auto;
+            word-spacing: 5px;
+
+            &-link {
+                transition: .3s;
+            }
+
+            &-link:hover {
+                color: #58a6ff;
+                cursor: pointer;
+                transition: .3s;
+            }
+
+            .active {
+                color: #58a6ff;
+                cursor: default;
+            }
+        }
+    }
+}
+
 
 //***MAIN***
 .main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: calc(100vh - 70px);
+  height: calc(100vh - 142px);
+  padding-top: 250px;
+
+  .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .quote {
+          margin-top: 20px;
+          text-align: center;
+          width: 70%;
+      }
+
+  }
 }
 
 //***FOOTER***
@@ -39,10 +112,10 @@ body {
       justify-content: space-between;
     }
 
-    
     .git {
         display: flex;
         align-items: center;
+        word-spacing: 5px;
     }
     
     .footer-link {
@@ -77,6 +150,4 @@ body {
     .logo-image:hover {
         background-color: #8b949e;
     }
-
-    
 }

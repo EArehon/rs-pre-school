@@ -1,8 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -10,7 +9,7 @@ body {
   height: 100%;
   background-color: #0d1117;
   font-family: "Blinker", sans-serif;
-  color: white;
+  color: #c9d1d9;
 }
 
 .container {
@@ -19,17 +18,71 @@ body {
   padding: 20px;
 }
 
-.main {
-  display: -webkit-box;
-  display: -ms-flexbox;
+.button {
+  border: 1px solid #c9d1d9;
+  padding: 10px 30px;
+  background: transparent;
+  color: #c9d1d9;
+  font-size: 14px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.button::after {
+  content: "";
+  position: absolute;
+  left: auto;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #c9d1d9;
+  transition: 0.3s;
+}
+.button:hover {
+  cursor: pointer;
+  color: #58a6ff;
+}
+.button:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.header .container {
+  line-height: 30px;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: calc(100vh - 70px);
+}
+.header .container .lang {
+  margin-left: auto;
+  word-spacing: 5px;
+}
+.header .container .lang-link {
+  transition: 0.3s;
+}
+.header .container .lang-link:hover {
+  color: #58a6ff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.header .container .lang .active {
+  color: #58a6ff;
+  cursor: default;
+}
+
+.main {
+  height: calc(100vh - 142px);
+  padding-top: 250px;
+}
+.main .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main .container .quote {
+  margin-top: 20px;
+  text-align: center;
+  width: 70%;
 }
 
 .footer {
@@ -37,23 +90,14 @@ body {
   color: #484f58;
 }
 .footer .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
 }
 .footer .git {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
+  word-spacing: 5px;
 }
 .footer .footer-link {
   display: block;
