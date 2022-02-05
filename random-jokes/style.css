@@ -87,7 +87,7 @@ body {
 
 .footer {
   border-top: 1px solid #21262d;
-  color: #484f58;
+  color: #646568;
 }
 .footer .container {
   display: flex;
@@ -113,13 +113,13 @@ body {
 .footer .rss {
   width: 80px;
   height: 30px;
-  background-color: #484f58;
+  background-color: #646568;
   -webkit-mask-image: url(./assets/svg/rs_school_js.svg);
   -webkit-mask-position: center;
   -webkit-mask-repeat: no-repeat;
 }
 .footer .logo-image {
-  background-color: #484f58;
+  background-color: #646568;
   -webkit-mask-size: cover;
   -webkit-mask-position: center;
   -webkit-mask-repeat: no-repeat;
