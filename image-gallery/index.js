@@ -9,64 +9,55 @@ let reg = `Оценка 70/60
 7) Высокое качество оформления приложения +10
 `;
 
-console.log(reg);
+//console.log(reg);
 
-const quotesEn = 'https://type.fit/api/quotes';
-const quotesRu = './assets/quotes.json';
+// TODO
+// 1) logo
+// 2) adaptive
+// 3) array of 10 random quares
 
-const quote = document.querySelector('.quote');
-const button = document.querySelector('.button');
-const langSwitch = document.querySelector('.lang');
+const gallery = document.querySelector('.gallery');
+const search = document.querySelector('.search-input');
+const searchButton = document.querySelector('.icon-search');
+const clearButton = document.querySelector('.icon-times');
 
-let lang = 'ru';
+let url = 'https://api.unsplash.com/search/photos?query=belarus&per_page=30&orientation=landscape&client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo';
 
-const i18obj = {en: 'Click me!',
-                ru: 'Нажми меня!',
-            };
-
-const audio = new Audio;
-audio.src = './assets/wtbd.mp3';
-audio.volume = 0.2;
-
-button.addEventListener('click', changeQuote);
-langSwitch.addEventListener('click', changeLang);
-
-
-//получение данных из API или JSON файла
+//get data from API
 async function getData() {
-    url = lang == 'ru' ? quotesRu : quotesEn;
     const res = await fetch(url);
     const data = await res.json();
-    quote.textContent = data[getRandom(data.length)].text;
+
+    showImages(data.results);
 }
 
 getData();
 
-//смена активного языка
-function changeLang(event) {
-    if (event.target.classList.contains('lang-link') && lang != event.target.dataset.i18n) {
-        changeClassActive('lang-link', event.target);
-        lang = event.target.dataset.i18n;
-        localStorage.setItem('lang', lang);
-        button.textContent = i18obj[lang];
-        getData();
+document.addEventListener('keyup', (e) => {if (e.key == 'Enter') searchImages()});
+//searchButton.addEventListener('click', searchImages);
+clearButton.addEventListener('click', clearField);
+
+function clearField () {
+    search.value = '';
+ }
+
+//search images
+function searchImages () {
+  url = `https://api.unsplash.com/search/photos?query=${search.value}&per_page=30&orientation=landscape&client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo`;
+  gallery.innerHTML = "";
+  getData();
+}
+
+//add image in gallery container
+function showImages (arr) {
+    for (let i = 0; i < arr.length; i++) {
+        const img = document.createElement('img');
+        img.classList.add('gallery-image');
+        img.src = arr[i].urls.regular;
+        img.alt = arr[i].alt_description;
+        img.width = 1080;
+        img.height = 720;
+
+        gallery.append(img);
     }
-}
-
-//смена цитаты по нажатию кнопки
-function changeQuote () {
-    audio.currentTime = 0;
-    audio.play();
-    getData();
-}
-
-//получение рандомного числа
-function getRandom(max) {
-  return Math.floor(Math.random() * (max + 1));
-}
-
-//смена активного класа
-function changeClassActive(elemClass, elemTarget ){
-    document.querySelectorAll(`.${elemClass}`).forEach(elem => elem.classList.remove('active'));
-    elemTarget.classList.add('active');
 }
