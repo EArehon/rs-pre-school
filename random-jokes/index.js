@@ -7,6 +7,8 @@ let reg = `Оценка 70/60
 5) Смена цитаты сопровождается проигрыванием звука +10
 6) Можно выбрать один из двух языков отображения цитат: en/ru +10
 7) Высокое качество оформления приложения +10
+ - дизайн отличающийся от демо в лучшую сторону +5
+ - выбранный язык цитаты хранится в локальном хранилище +5
 `;
 
 console.log(reg);
@@ -30,7 +32,7 @@ audio.volume = 0.2;
 
 button.addEventListener('click', changeQuote);
 langSwitch.addEventListener('click', changeLang);
-
+window.addEventListener('load', getLocalStorage);
 
 //получение данных из API или JSON файла
 async function getData() {
@@ -40,7 +42,10 @@ async function getData() {
     quote.textContent = data[getRandom(data.length)].text;
 }
 
-getData();
+if (!localStorage.getItem('lang')) {
+    getData();
+}
+
 
 //смена активного языка
 function changeLang(event) {
@@ -62,11 +67,21 @@ function changeQuote () {
 
 //получение рандомного числа
 function getRandom(max) {
-  return Math.floor(Math.random() * (max + 1));
+  return Math.floor(Math.random() * (max));
 }
 
 //смена активного класа
 function changeClassActive(elemClass, elemTarget ){
     document.querySelectorAll(`.${elemClass}`).forEach(elem => elem.classList.remove('active'));
     elemTarget.classList.add('active');
+}
+
+//get data from localstorage
+function getLocalStorage () {
+    if (localStorage.getItem('lang')) {
+      lang = localStorage.getItem('lang');
+      changeClassActive('lang-link', document.querySelector(`[data-i18n=${lang}]`));
+      button.textContent = i18obj[lang];
+      getData();      
+    }
 }
