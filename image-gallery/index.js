@@ -14,14 +14,16 @@ let reg = `Оценка 70/60
 // TODO
 // 1) logo
 // 2) adaptive
-// 3) array of 10 random quares
+// 3) favicon
 
 const gallery = document.querySelector('.gallery');
 const search = document.querySelector('.search-input');
 const searchButton = document.querySelector('.icon-search');
 const clearButton = document.querySelector('.icon-times');
+const keyWord = ['belarus', 'tesla', 'rtx', 'gtr', 'r34', 'gti mk1'];
 
-let url = 'https://api.unsplash.com/search/photos?query=belarus&per_page=30&orientation=landscape&client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo';
+let key = Math.floor(Math.random() * keyWord.length);
+let url = `https://api.unsplash.com/search/photos?query=${keyWord[key]}&per_page=30&orientation=landscape&client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo`;
 
 //get data from API
 async function getData() {
@@ -37,6 +39,7 @@ document.addEventListener('keyup', (e) => {if (e.key == 'Enter') searchImages()}
 //searchButton.addEventListener('click', searchImages);
 clearButton.addEventListener('click', clearField);
 
+//clear search field
 function clearField () {
     search.value = '';
  }

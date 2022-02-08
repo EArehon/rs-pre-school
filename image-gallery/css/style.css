@@ -137,3 +137,20 @@ body {
   background-color: #8b949e;
   transition: 0.3s;
 }
+
+@media (max-width: 440px) {
+  .header .container {
+    justify-content: center;
+  }
+
+  .main .container .gallery-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .footer .container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+}
