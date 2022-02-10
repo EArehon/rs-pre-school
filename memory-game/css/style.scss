@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --colorBlue: #58a6ff;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #0d1117;
+    font-family: 'Blinker', sans-serif;
+    color: #c9d1d9;
+}
+
+.container{
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+//***HEADER***
+.header {
+    border-bottom: 1px solid #21262d;
+
+    .container {
+        line-height: 30px;
+        display: flex;
+        justify-content: flex-start;
+
+        .logo {
+            transition: .3s;
+            font-size: 30px;
+
+            &:hover {
+                color: var(--colorBlue);
+                cursor: pointer;
+                transition: .3s;
+            }
+        }
+    }
+}
+
+//***MAIN***
+.main {
+  min-height: calc(100vh - 143px);
+
+  .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .board {
+          width: 50%;
+          height: 60vh;
+          border: 1px solid #8b949e;
+          display: flex;
+
+          &-card {
+              width: 60%;
+          }
+      }
+  }
+}
+
+//***FOOTER***
+.footer {
+    border-top: 1px solid #21262d;
+    color: #646568;
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .git {
+        display: flex;
+        align-items: center;
+        word-spacing: 5px;
+    }
+    
+    .footer-link {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    .git-logo {
+        width: 30px;
+        height: 30px;
+        -webkit-mask-image: url(../assets/svg/github.svg);
+        margin-right: 10px;
+    }
+
+    .rss {
+        width: 80px;
+        height: 30px;
+        background-color: #646568;
+        -webkit-mask-image: url(../assets/svg/rs_school_js.svg);
+        -webkit-mask-position: center;
+        -webkit-mask-repeat: no-repeat;
+    }
+
+    .logo-image {
+        background-color: #646568;
+        -webkit-mask-size: cover;
+        -webkit-mask-position: center;
+        -webkit-mask-repeat: no-repeat;
+        transition: .3s;
+    }
+
+    .logo-image:hover {
+        background-color: #8b949e;
+        transition: .3s;
+    }
+}
