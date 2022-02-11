@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #0d1117;
+    font-family: 'Blinker', sans-serif;
+    color: #c9d1d9;
+}
+
+.container{
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+//***HEADER***
+.header {
+    border-bottom: 1px solid #21262d;
+
+    .container {
+        line-height: 30px;
+        display: flex;
+        justify-content: space-between;
+
+        .logo {
+            width: 100px;
+            height: 30px;
+            background-color: #c9d1d9;
+            -webkit-mask-image: url(../assets/svg/logo.svg);
+            -webkit-mask-position: center;
+            -webkit-mask-size: contain;
+            -webkit-mask-repeat: no-repeat;
+            transition: .3s;
+
+            &:hover {
+                background-color: #58a6ff;
+                transition: .3s;
+            }
+        }
+        
+        .search {
+            width: 300px;
+            position: relative;
+
+            &-input {
+                width: 100%;
+                font-size: 16px;
+                padding: 5px 15px;
+                border-radius: 25px;
+                outline: none;
+                background-color: #0d1117;
+                border: 1px solid #646568;
+                color: #c9d1d9;
+                font-family: inherit;
+                box-shadow: none;
+                transition: .3s ease-in-out;
+
+                &:hover, 
+                &:focus {
+                    box-shadow: 0 0 3px 1px #58a6ff;
+                    border-color: #58a6ff;
+                    transition: .3s ease-in-out;
+                }
+            }
+
+            .icon {
+                position: absolute;
+                top: 6px;
+                width: 20px;
+                height: 20px;
+                background-color: #646568;
+                -webkit-mask-size: cover;
+                -webkit-mask-position: center;
+                z-index: 10;
+                transition: .3s ease-in-out;
+
+                &:hover {
+                    background-color: #58a6ff;
+                    cursor: pointer;
+                    transition: .3s ease-in-out;
+                }
+
+                &-search {
+                    right: 15px;
+                    -webkit-mask: url('../assets/svg/search-solid.svg');
+                }
+
+                &-times {
+                    right: 15px;
+                    -webkit-mask-image: url('../assets/svg/close.svg');
+                }
+            }
+        }
+    }
+}
+
+//***MAIN***
+.main {
+  min-height: calc(100vh - 143px);
+
+  .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .gallery{
+          display: flex;
+          justify-content: space-evenly;
+          flex-wrap: wrap;
+          gap: 20px;
+
+          &-image {
+              width: 390px;
+              height: 260px;
+          }
+      }
+  }
+}
+
+//***FOOTER***
+.footer {
+    border-top: 1px solid #21262d;
+    color: #646568;
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .git {
+        display: flex;
+        align-items: center;
+        word-spacing: 5px;
+    }
+    
+    .footer-link {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    .git-logo {
+        width: 30px;
+        height: 30px;
+        -webkit-mask-image: url(../assets/svg/github.svg);
+        margin-right: 10px;
+    }
+
+    .rss {
+        width: 80px;
+        height: 30px;
+        background-color: #646568;
+        -webkit-mask-image: url(../assets/svg/rs_school_js.svg);
+        -webkit-mask-position: center;
+        -webkit-mask-repeat: no-repeat;
+    }
+
+    .logo-image {
+        background-color: #646568;
+        -webkit-mask-size: cover;
+        -webkit-mask-position: center;
+        -webkit-mask-repeat: no-repeat;
+        transition: .3s;
+    }
+
+    .logo-image:hover {
+        background-color: #8b949e;
+        transition: .3s;
+    }
+}
+
+
+@media (max-width: 440px) {
+    .header {
+        .container {
+            justify-content: center;
+        }
+    }
+    
+    .main {
+        .container {
+            .gallery {
+                &-image {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+
+    .footer {
+        .container {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+    }
+}
