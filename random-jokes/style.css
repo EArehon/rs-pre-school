@@ -15,7 +15,7 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 10px 20px;
 }
 
 .button {
@@ -51,6 +51,21 @@ body {
 .header .container {
   line-height: 30px;
   display: flex;
+  align-items: center;
+}
+.header .container .logo {
+  width: 100px;
+  height: 45px;
+  background-color: white;
+  -webkit-mask-image: url(./assets/svg/logo.svg);
+  -webkit-mask-position: center;
+  -webkit-mask-size: cover;
+  -webkit-mask-repeat: no-repeat;
+  transition: 0.3s;
+}
+.header .container .logo:hover {
+  background-color: #58a6ff;
+  transition: 0.3s;
 }
 .header .container .lang {
   margin-left: auto;
