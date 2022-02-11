@@ -16,7 +16,7 @@ const clearButton = document.querySelector('.icon-times');
 const keyWord = ['belarus', 'tesla', 'rtx', 'gtr', 'r34', 'gti mk1'];
 
 let key = Math.floor(Math.random() * keyWord.length);
-let url = `https://api.unsplash.com/search/photos?query=${keyWord[key]}&per_page=30&orientation=landscape&client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo`;
+let url = `https://api.unsplash.com/search/photos?query=${keyWord[key]}&per_page=30&orientation=landscape&client_id=Zev2tmq2lrwBMOLcNSxJ-Zd4dgT9pA-bD5vaQ9JpfIM`;
 
 //get data from API
 async function getData() {
@@ -39,7 +39,7 @@ function clearField () {
 
 //search images
 function searchImages () {
-  url = `https://api.unsplash.com/search/photos?query=${search.value}&per_page=30&orientation=landscape&client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo`;
+  url = `https://api.unsplash.com/search/photos?query=${search.value}&per_page=30&orientation=landscape&client_id=Zev2tmq2lrwBMOLcNSxJ-Zd4dgT9pA-bD5vaQ9JpfIM`;
   gallery.innerHTML = "";
   getData();
 }
