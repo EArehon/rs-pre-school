@@ -6,14 +6,16 @@
 
 :root {
   --colorBlue: #58a6ff;
+  --colorDarkGrey: #0d1117;
 }
 
 body {
   width: 100%;
   height: 100%;
-  background-color: #0d1117;
+  background-color: var(--colorDarkGrey);
   font-family: "Blinker", sans-serif;
   color: #c9d1d9;
+  position: relative;
 }
 
 .container {
@@ -50,13 +52,48 @@ body {
   align-items: center;
 }
 .main .container .board {
-  width: 50%;
-  height: 60vh;
-  border: 1px solid #8b949e;
+  width: 600px;
+  height: 600px;
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  perspective: 1000px;
 }
 .main .container .board-card {
-  width: 60%;
+  position: relative;
+  width: calc(20% - 5px);
+  height: calc(25% - 5px);
+  height: auto;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  cursor: pointer;
+}
+.main .container .board-card-front, .main .container .board-card-back {
+  border-radius: 5px;
+  position: absolute;
+  backface-visibility: hidden;
+}
+.main .container .board-card-front {
+  width: 100%;
+  height: auto;
+  padding: 0;
+  transform: rotateY(180deg);
+}
+.main .container .board-card-back {
+  width: 100%;
+  height: auto;
+  padding: 15%;
+  border: 1px solid #21262d;
+  background-color: var(--colorDarkGrey);
+}
+.main .container .board-card:active {
+  transform: scale(0.97);
+}
+.main .container .board .flip {
+  transform: rotateY(180deg);
+  cursor: default;
 }
 
 .footer {
@@ -102,4 +139,14 @@ body {
 .footer .logo-image:hover {
   background-color: #8b949e;
   transition: 0.3s;
+}
+
+.modal {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.6);
 }
