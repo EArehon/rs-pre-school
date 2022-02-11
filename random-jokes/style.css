@@ -15,7 +15,7 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 10px 20px;
+  padding: 20px;
 }
 
 .button {
@@ -55,11 +55,11 @@ body {
 }
 .header .container .logo {
   width: 100px;
-  height: 45px;
-  background-color: white;
+  height: 30px;
+  background-color: #c9d1d9;
   -webkit-mask-image: url(./assets/svg/logo.svg);
   -webkit-mask-position: center;
-  -webkit-mask-size: cover;
+  -webkit-mask-size: contain;
   -webkit-mask-repeat: no-repeat;
   transition: 0.3s;
 }
