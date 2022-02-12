@@ -10,16 +10,28 @@ let reg = `Оценка 70/60
 `;
 
 //console.log(reg);
+/* to do
+1) foto for cards
+2) style for modal
+3) sounds fo flips */
 
 let hasFlippedCards = false;
+let firstFlip = false;
 let lockBoard = false;
 let firstCard, secondCard;
 let moves = 1;
 let leftCards = 10;
+let time = 0;
+let records = [];
 
 const board = document.querySelector('.board');
 const modal = document.querySelector('.modal');
 const modalMoves = document.querySelector('.moves');
+const modalTimes = document.querySelector('.times');
+const modalRecords = document.querySelector('.records');
+const newGame = document.querySelector('.new-game');
+
+window.addEventListener('load', getLocalStorage);
 
 //style="order:${Math.floor(Math.random()*20)}"
 for (let i = 0; i < 20; i++) {
@@ -32,18 +44,19 @@ for (let i = 0; i < 20; i++) {
 
 const cards = board.querySelectorAll('.board-card');
 cards.forEach(card => card.addEventListener('click', flipCards));
+newGame.addEventListener('click', startNewGame);
 
+//flip cards
 function flipCards () {
     if (lockBoard) return;
     if (this == firstCard) return;
+    if (!firstFlip) start();
 
     this.classList.toggle('flip');
 
     if (!hasFlippedCards) {
         hasFlippedCards = true;
         firstCard = this;
-
-        console.log(moves);
 
         return; 
     }
@@ -53,12 +66,14 @@ function flipCards () {
     checkMatch();
 }
 
+//check correct choise cards
 function checkMatch() {
     let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
 
     isMatch ? disableCards() : unFlipCards();
 }
 
+//correct choise cards
 function disableCards () {
     firstCard.removeEventListener('click', flipCards);
     secondCard.removeEventListener('click', flipCards);
@@ -67,6 +82,7 @@ function disableCards () {
     resetBoard();
 }
 
+//wrong choise cards
 function unFlipCards () {
     lockBoard = true;
 
@@ -78,6 +94,7 @@ function unFlipCards () {
     }, 1000);
 }
 
+//clear board
 function resetBoard () {
     [hasFlippedCards, lockBoard] = [false, false];
     [firstCard, secondCard] = [null, null];
@@ -85,12 +102,79 @@ function resetBoard () {
     moves++;
 }
 
+//check end of game
 function checkEnd () {
     leftCards --;
 
     if (leftCards == 0) {
+        stop();
         console.log('Finish!');
         modal.style.display = "flex";
         modalMoves.textContent = moves;
+        modalTimes.textContent = time;
+
+        let rec = new Record(moves, time);
+        //records.obj = new Record(moves, time);
+        records.push(rec);
+        console.log(records);
+
+        myJSON = JSON.stringify(records);
+        localStorage.setItem("testJSON", myJSON);
+    }
+}
+
+//timer
+function timer() {
+    time ++;
+    console.log(time);
+}
+
+//start timer
+function start() {
+   window.TimerId = window.setInterval(timer, 1000);
+   firstFlip = true;
+}
+
+//stop timer
+function stop() {
+   window.clearInterval(window.TimerId);
+}
+
+//new record
+function Record (moves, time) {
+    this.time = time;
+    this.moves = moves;
+}
+
+//start new game
+function startNewGame() {
+    location.reload();
+}
+ 
+//get data from localstorage
+function getLocalStorage () {
+    if (localStorage.getItem('testJSON')) {
+      text = localStorage.getItem("testJSON");
+      records = JSON.parse(text);
+
+      showRecord();      
+    }
+}
+
+//show records table
+function showRecord() {
+    for (let i = 0; i < records.length; i++){
+        const rec = `<p>${i+1}. Время: ${records[i].time}. Ходы: ${records[i].moves}.</p>`
+
+        modalRecords.insertAdjacentHTML('beforeend', rec);
+    }
+
+    deleteFirst(records);
+}
+
+//delete first record
+function deleteFirst(arr) {
+    if (arr.length == 10) {
+        arr.splice(0, 1);
     }
 }
