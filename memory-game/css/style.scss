@@ -177,10 +177,46 @@ body {
     background-color: rgba(0, 0, 0, 0.6);
 
     .container {
-        width: 50%;
-        height: 50%;
+        width: 30%;
+        min-width: 300px;
         border: 1px solid #8b949e;
         border-radius: 5px;
         background-color: var(--colorDarkGrey);
+
+        .current-game{
+            text-align: center;
+
+            span {
+                color: #58a6ff;
+            }
+        }
+
+        .records {
+            h2 {
+                text-align: center;
+                margin-top: 10px;
+            }
+        }
+
+        .button {
+            display: flex;
+            justify-content: center;
+        }
+        .new-game {
+            background: transparent;
+            padding: 5px 10px;
+            color: #c9d1d9;
+            outline: none;
+            border: 1px solid #8b949e;
+            margin: 10px;
+            font-size: 18px;
+            transition: .3s;
+
+            &:hover {
+                cursor: pointer;
+                border-color: #58a6ff;
+                transition: .3s;
+            }
+        }
     }
 }

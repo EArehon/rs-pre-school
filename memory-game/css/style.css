@@ -153,9 +153,38 @@ body {
   background-color: rgba(0, 0, 0, 0.6);
 }
 .modal .container {
-  width: 50%;
-  height: 50%;
+  width: 30%;
+  min-width: 300px;
   border: 1px solid #8b949e;
   border-radius: 5px;
   background-color: var(--colorDarkGrey);
+}
+.modal .container .current-game {
+  text-align: center;
+}
+.modal .container .current-game span {
+  color: #58a6ff;
+}
+.modal .container .records h2 {
+  text-align: center;
+  margin-top: 10px;
+}
+.modal .container .button {
+  display: flex;
+  justify-content: center;
+}
+.modal .container .new-game {
+  background: transparent;
+  padding: 5px 10px;
+  color: #c9d1d9;
+  outline: none;
+  border: 1px solid #8b949e;
+  margin: 10px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+.modal .container .new-game:hover {
+  cursor: pointer;
+  border-color: #58a6ff;
+  transition: 0.3s;
 }

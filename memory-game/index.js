@@ -111,10 +111,9 @@ function checkEnd () {
         console.log('Finish!');
         modal.style.display = "flex";
         modalMoves.textContent = moves;
-        modalTimes.textContent = time;
+        modalTimes.textContent = clockTime(time);
 
         let rec = new Record(moves, time);
-        //records.obj = new Record(moves, time);
         records.push(rec);
         console.log(records);
 
@@ -164,7 +163,7 @@ function getLocalStorage () {
 //show records table
 function showRecord() {
     for (let i = 0; i < records.length; i++){
-        const rec = `<p>${i+1}. Время: ${records[i].time}. Ходы: ${records[i].moves}.</p>`
+        const rec = `<p>${i+1}. Время: ${clockTime(records[i].time)}. Ходы: ${records[i].moves}.</p>`
 
         modalRecords.insertAdjacentHTML('beforeend', rec);
     }
@@ -177,4 +176,12 @@ function deleteFirst(arr) {
     if (arr.length == 10) {
         arr.splice(0, 1);
     }
+}
+
+//return time in clock format
+function clockTime (duration) {
+    let min = Math.floor(duration / 60);
+    let sec = Math.round(duration) - min * 60;
+  
+    return String(min).padStart(2, 0) + ':' + String(sec).padStart(2, 0);
 }
