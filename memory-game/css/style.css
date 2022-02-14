@@ -30,15 +30,28 @@ body {
 .header .container {
   line-height: 30px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 .header .container .logo {
+  width: 100px;
+  height: 30px;
+  background-color: #c9d1d9;
+  -webkit-mask-image: url(../assets/svg/logo.svg);
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  transition: 0.3s;
+}
+.header .container .logo:hover {
+  background-color: #58a6ff;
+  transition: 0.3s;
+}
+.header .container .memory-game {
   transition: 0.3s;
   font-size: 30px;
 }
-.header .container .logo:hover {
+.header .container .memory-game:hover {
   color: var(--colorBlue);
-  cursor: pointer;
   transition: 0.3s;
 }
 
@@ -50,6 +63,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-height: calc(100vh - 143px);
 }
 .main .container .board {
   width: 600px;
@@ -164,6 +178,14 @@ body {
 }
 .modal .container .current-game span {
   color: #58a6ff;
+}
+.modal .container .records {
+  margin: 0 15%;
+}
+@media (max-width: 1368px) {
+  .modal .container .records {
+    margin: 0;
+  }
 }
 .modal .container .records h2 {
   text-align: center;
