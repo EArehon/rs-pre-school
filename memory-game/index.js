@@ -9,6 +9,8 @@ let reg = `Оценка 70/60
 7) Высокое качество оформления приложения, добавлены звуковые эффекты +10
 `;
 
+console.log(reg);
+
 let hasFlippedCards = false;
 let firstFlip = false;
 let lockBoard = false;
@@ -132,7 +134,6 @@ function checkEnd () {
     
             let rec = new Record(moves, time);
             records.push(rec);
-            console.log(records);
     
             myJSON = JSON.stringify(records);
             localStorage.setItem("testJSON", myJSON);
@@ -144,7 +145,6 @@ function checkEnd () {
 //timer
 function timer() {
     time ++;
-    console.log(time);
 }
 
 //start timer
